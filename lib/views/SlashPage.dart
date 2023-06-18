@@ -1,7 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_midterm/views/StartPage.dart';
+import 'package:network_assigment_1/utils/GetMaterail.dart';
+
+import 'StartPage.dart';
+
 
 class SlashPage extends StatefulWidget {
   const SlashPage({super.key});
@@ -14,7 +17,7 @@ class SlashPage extends StatefulWidget {
 class _SlashPageState extends State<SlashPage> {
   @override
   void initState() {
-    // TODO: implement initState
+    //TODO: implement initState
     Future.delayed(const Duration(seconds: 3),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const StartPage()));
     });
@@ -24,16 +27,16 @@ class _SlashPageState extends State<SlashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.green,
-        child: const Column(
+        color: MaterialColors.one,
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(child:SizedBox(height: 20,)),
             Expanded(
               child:Center(
               child: CircleAvatar(
-                radius: 130,
-                child: Icon(Icons.home_outlined,size: 230,),
+                radius: 110,
+                child: Image.asset("lib/asset/image/logo.png",fit: BoxFit.cover),
               ),
             ),
             ),
@@ -41,9 +44,9 @@ class _SlashPageState extends State<SlashPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("Wellcome to Mean Hotel"),
-                    Text("Version: 1.0.0"),
-                    SizedBox(height: 40,),
+                    Text("Wellcome to Mean Hotel",style: Theme.of(context).textTheme.labelMedium,),
+                    Text("Version: 1.0.0",style: Theme.of(context).textTheme.labelSmall,),
+                    SizedBox(height: 80,),
                   ],
             ))
             
