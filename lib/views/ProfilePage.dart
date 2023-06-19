@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:network_assigment_1/components/Home/MainTitle.dart';
-import 'package:network_assigment_1/components/Profile/HeaderProfile.dart';
-import 'package:network_assigment_1/components/Profile/ProfileAccountSetting.dart';
-import 'package:network_assigment_1/components/Profile/ProfileSupportSetting.dart';
-
-import '../utils/GetMaterail.dart';
+import '../components/Profile/HeaderProfile.dart';
+import '../components/Profile/ProfileAccountSetting.dart';
+import '../components/Profile/ProfileSupportSetting.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: SingleChildScrollView(
-        child:Column(
-          children: [
-            ProfileHeader(),
-            SizedBox(height: 20,),
-            ProfileAccountSetting(),
-            SizedBox(height: 20,),
-            ProfileSupportSetting(),
-            SizedBox(height: 20,),
-          ],
-        )
-      )
-    );
+    return const Scaffold(
+        body: SingleChildScrollView(
+            child: Column(
+      children: [
+        ProfileHeader(),
+        SizedBox(
+          height: 30,
+        ),
+        ProfileAccountSetting(),
+        SizedBox(
+          height: 30,
+        ),
+        ProfileSupportSetting(),
+        SizedBox(
+          height: 30,
+        ),
+      ],
+    )));
   }
 }

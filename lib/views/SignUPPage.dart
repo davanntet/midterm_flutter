@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../components/Template/TemplateTextFormField.dart';
 import '../utils/FormType.dart';
 
@@ -11,9 +10,9 @@ class SignUPPage extends StatefulWidget {
 }
 
 class _SignUPPageState extends State<SignUPPage> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _fullnameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _fullnameController = TextEditingController();
   String error = "";
   @override
   Widget build(BuildContext context) {
@@ -39,105 +38,118 @@ class _SignUPPageState extends State<SignUPPage> {
                     style: Theme.of(context).textTheme.bodySmall,
                     textAlign: TextAlign.left,
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Form(
                   child: Column(
-                    children: [
-                      TemplateTextFormField(
-                        formType: FormType.fullname,
-                        controller: _fullnameController,
-                      ),
-                    ],
-                  )),
-              SizedBox(
+                children: [
+                  TemplateTextFormField(
+                    formType: FormType.fullname,
+                    controller: _fullnameController,
+                  ),
+                ],
+              )),
+              const SizedBox(
                 height: 25,
               ),
               Form(
                   child: Column(
-                    children: [
-                      TemplateTextFormField(
-                        formType: FormType.email,
-                        controller: _emailController,
-                      ),
-                    ],
-                  )),
-              SizedBox(
+                children: [
+                  TemplateTextFormField(
+                    formType: FormType.email,
+                    controller: _emailController,
+                  ),
+                ],
+              )),
+              const SizedBox(
                 height: 25,
               ),
               Form(
                   child: Column(
-                    children: [
-                      TemplateTextFormField(
-                        formType: FormType.password,
-                        controller: _passwordController,
-                      ),
-                    ],
-                  )),
-              SizedBox(
+                children: [
+                  TemplateTextFormField(
+                    formType: FormType.password,
+                    controller: _passwordController,
+                  ),
+                ],
+              )),
+              const SizedBox(
                 height: 25,
               ),
-              Text("Confirm your email. Standard message and date retes apply."),
-              SizedBox(
+              const Text(
+                  "Confirm your email. Standard message and date retes apply."),
+              const SizedBox(
                 height: 25,
               ),
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       minimumSize:
-                      Size(MediaQuery.of(context).size.width * 0.8, 50),
+                          Size(MediaQuery.of(context).size.width * 0.8, 50),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40))),
                   onPressed: () {
-
-                    if(_emailController.text.isNotEmpty || _passwordController.text.isNotEmpty){
+                    if (_emailController.text.isNotEmpty ||
+                        _passwordController.text.isNotEmpty) {
                       // Navigator.pushReplacementNamed(context, "index");
 
-                      if(_emailController.text.length>10){
-                        if(_passwordController.text.length <8 &&_emailController.text.substring(_emailController.text.length-10,_emailController.text.length)=="@gmail.com"){
+                      if (_emailController.text.length > 10) {
+                        if (_passwordController.text.length < 8 &&
+                            _emailController.text.substring(
+                                    _emailController.text.length - 10,
+                                    _emailController.text.length) ==
+                                "@gmail.com") {
                           setState(() {
                             error = "Password must be at least 8 characters";
                           });
-                        }
-                        else if(_passwordController.text.length >=8 &&!(_emailController.text.substring(_emailController.text.length-10,_emailController.text.length)=="@gmail.com")){
+                        } else if (_passwordController.text.length >= 8 &&
+                            !(_emailController.text.substring(
+                                    _emailController.text.length - 10,
+                                    _emailController.text.length) ==
+                                "@gmail.com")) {
                           setState(() {
                             error = "Email must be include @gmail.com";
                           });
-                        }else if(_passwordController.text.length >=8 &&_emailController.text.substring(_emailController.text.length-10,_emailController.text.length)=="@gmail.com"){
+                        } else if (_passwordController.text.length >= 8 &&
+                            _emailController.text.substring(
+                                    _emailController.text.length - 10,
+                                    _emailController.text.length) ==
+                                "@gmail.com") {
                           setState(() {
-                            error = "sfsfsf";
+                            error = "";
+                            Navigator.pushReplacementNamed(context, 'index');
+                          });
+                        } else {
+                          setState(() {
+                            error =
+                                "Password must be at least 8 characters and email must be include @gmail.com";
                           });
                         }
-                        else{
-                          setState(() {
-                            error = "Password must be at least 8 characters and email must be include @gmail.com";
-                          });
-                        }
-                      }else if(_passwordController.text.length <8){
-                          setState(() {
-                          error = "Password must be at least 8 characters and email must be include @gmail.com";
-                          });
-                      }else if(_passwordController.text.length >=8){
+                      } else if (_passwordController.text.length < 8) {
+                        setState(() {
+                          error =
+                              "Password must be at least 8 characters and email must be include @gmail.com";
+                        });
+                      } else if (_passwordController.text.length >= 8) {
                         setState(() {
                           error = "Email must be include @gmail.com";
                         });
                       }
-                      if(_fullnameController.text.isEmpty){
+                      if (_fullnameController.text.isEmpty) {
                         setState(() {
                           error = "Please enter fullname before sign up";
                         });
-                      }
-                      else if(_emailController.text.isEmpty){
+                      } else if (_emailController.text.isEmpty) {
                         setState(() {
                           error = "Please enter email before sign up";
                         });
-                      }else if(_passwordController.text.isEmpty){
+                      } else if (_passwordController.text.isEmpty) {
                         setState(() {
                           error = "Please enter password before sign up";
                         });
                       }
-                    }else{
+                    } else {
                       setState(() {
                         error = "Please enter email and password before login";
                       });
@@ -148,15 +160,16 @@ class _SignUPPageState extends State<SignUPPage> {
                     "Sign Up",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
-
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: Text(error,textAlign: TextAlign.center,style:TextStyle(color: Colors.red,fontSize: 14)),
+                child: Text(error,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.red, fontSize: 14)),
               )
             ],
           ),

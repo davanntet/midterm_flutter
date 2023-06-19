@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../Model/SettingData.dart';
 import '../Home/MainTitle.dart';
 import '../Template/TemplateSetting.dart';
@@ -11,9 +10,14 @@ class ProfileAccountSetting extends StatelessWidget {
     List<AboutSetting> list = AccountSettings();
     return Column(
       children: [
-        MainTitle(title: "Account Setting",),
-        ...List.generate(4, (index) => TemplateSetting(setting: list[index],)
-        )
+        const MainTitle(
+          title: "Account Setting",
+        ),
+        ...List.generate(
+            4,
+            (index) => TemplateSetting(
+                  setting: list[index],
+                ))
       ],
     );
   }

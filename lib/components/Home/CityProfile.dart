@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:network_assigment_1/Model/CityData.dart';
+
+import '../../Model/CityData.dart';
 
 class CityProfile extends StatelessWidget {
   const CityProfile({super.key});
@@ -12,22 +12,27 @@ class CityProfile extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          ...List.generate(cityData.length, (index) => Container(
-              // padding: const EdgeInsets.symmetric(horizontal: 10),
-              width: 80,
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage(cityData[index].image),
-                  //),
-                  ),
-                  SizedBox(height: 5,),
-                  Text(cityData[index].name,style: Theme.of(context).textTheme.bodySmall,),
-                ],
-              )
-          )
-          )
+          ...List.generate(
+              cityData.length,
+              (index) => SizedBox(
+                  // padding: const EdgeInsets.symmetric(horizontal: 10),
+                  width: 80,
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage(cityData[index].image),
+                        //),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        cityData[index].name,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  )))
         ],
       ),
     );

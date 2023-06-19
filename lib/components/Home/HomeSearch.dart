@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeSearch extends StatelessWidget {
@@ -10,18 +8,22 @@ class HomeSearch extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-          color: Color(0xffECF3EE),
-          borderRadius: BorderRadius.circular(15)
-      ),
+          color: const Color(0xffECF3EE), borderRadius: BorderRadius.circular(15)),
       child: SearchBar(
         hintText: "Search for hotels",
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 5),
-          child: Icon(Icons.search_outlined,size: 30,),
+        leading: const Padding(
+          padding: EdgeInsets.only(left: 5),
+          child: Icon(
+            Icons.search_outlined,
+            size: 30,
+          ),
         ),
-        overlayColor:MaterialStateProperty.all(Colors.transparent),
-        backgroundColor: MaterialStateProperty.all(Color(0xffECF3EE)),
-        textStyle: MaterialStateProperty.all(TextStyle(color: Theme.of(context).secondaryHeaderColor,fontSize: 18,fontWeight: FontWeight.w400)),
+        overlayColor: MaterialStateProperty.all(Colors.transparent),
+        backgroundColor: MaterialStateProperty.all(const Color(0xffECF3EE)),
+        textStyle: MaterialStateProperty.all(TextStyle(
+            color: Theme.of(context).secondaryHeaderColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w400)),
         elevation: MaterialStateProperty.all(0),
       ),
     );

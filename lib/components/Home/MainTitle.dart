@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainTitle extends StatelessWidget {
@@ -9,8 +7,10 @@ class MainTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.only(left: 15,right: 15),
-        child: Text(title,style: Theme.of(context).textTheme.headlineSmall,)
-    );
+        padding: const EdgeInsets.only(left: 15, right: 15),
+        child: Text(
+          title,
+          style: Theme.of(context).textTheme.displayLarge,
+        ));
   }
 }

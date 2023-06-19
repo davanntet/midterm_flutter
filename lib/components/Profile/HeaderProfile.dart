@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../utils/GetMaterail.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -16,12 +15,13 @@ class ProfileHeader extends StatelessWidget {
               children: [
                 Container(
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.width*0.5,
+                  height: MediaQuery.of(context).size.width * 0.5,
                   width: double.infinity,
-                  child: Text("Profile",style:Theme.of(context).textTheme.labelMedium),
                   color: MaterialColors.one,
+                  child: Text("Profile",
+                      style: Theme.of(context).textTheme.labelMedium),
                 ),
-                Container(
+                SizedBox(
                   height: proifleSize,
                   width: double.infinity,
                 )
@@ -29,9 +29,12 @@ class ProfileHeader extends StatelessWidget {
             ),
             CircleAvatar(
               radius: proifleSize,
-              backgroundImage: AssetImage("lib/asset/image/profile.png"),
+              backgroundImage: const AssetImage("lib/asset/image/profile.png"),
             )
           ],
+        ),
+        const SizedBox(
+          height: 10,
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,12 +42,11 @@ class ProfileHeader extends StatelessWidget {
           children: [
             Text(
               "Tet Davann",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             Text(
               "davanncr@gmail.com",
               style: Theme.of(context).textTheme.displayMedium,
-
             )
           ],
         ),
