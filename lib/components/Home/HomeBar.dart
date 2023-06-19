@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:midterm_flutter/utils/GetMaterail.dart';
 
 class HomeBar extends StatelessWidget {
   const HomeBar({super.key});
@@ -44,10 +45,11 @@ class HomeBar extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
-                          color: Theme.of(context).hintColor, width: 1),
+                          color: MaterialColors.four.withOpacity(0.5), width: 1),
                       color: Colors.white),
                   child: const Icon(
                     Icons.notifications_none_rounded,
+                    color: MaterialColors.two,
                     size: 30,
                   ),
                 ),

@@ -14,7 +14,7 @@ class ProfileAccountSetting extends StatelessWidget {
           title: "Account Setting",
         ),
         ...List.generate(
-            4,
+            list.length,
             (index) => TemplateSetting(
                   setting: list[index],
                 ))

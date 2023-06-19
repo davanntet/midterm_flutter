@@ -15,7 +15,7 @@ class ProfileSupportSetting extends StatelessWidget {
           title: "Support",
         ),
         ...List.generate(
-            4,
+            list.length,
             (index) => TemplateSetting(
                   setting: list[index],
                 ))

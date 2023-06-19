@@ -45,7 +45,7 @@ List<AboutSetting> SupportSettings() {
       color: MaterialColors.green));
   list.add(AboutSetting(
       title: "Log Out",
-      icon: "lib/asset/icon/about.logout",
+      icon: "lib/asset/icon/logout.png",
       color: MaterialColors.orange));
   return list;
 }
