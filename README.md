@@ -1,4 +1,4 @@
-# network_assigment_1
+# midterm_flutter
 
 A new Flutter project.
 
